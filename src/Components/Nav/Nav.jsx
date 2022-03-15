@@ -1,8 +1,15 @@
-import './Nav.css'
+import './Nav.css';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
-  return <div>Nav COMPONENT</div>;
-  }; 
+  return (
+    <nav className='Nav'>
+      <Link to='#'>Info</Link>
+      <span className='Nav-Title'>Photo Tagging App</span>
+      <Link to='#'>Leaderboard</Link>
+    </nav>
+  );
+};
 
-  export default Nav;
+export default Nav;
