@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const LevelCard = (props) => {
-  const { title, img } = props;
+  const { img } = props;
 
   return (
     <div
@@ -11,9 +11,7 @@ const LevelCard = (props) => {
       style={{
         backgroundImage: `url(${img})`,
       }}>
-      <Link to='#'>
-        <span className='LevelCard-Title'>{title}</span>
-      </Link>
+      <Link to='#'></Link>
     </div>
   );
 };
