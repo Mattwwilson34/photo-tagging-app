@@ -8,6 +8,11 @@
   background-size: 90%;
   background-position: center;
   background-color: rgb(194, 61, 57);
+  transition: ease 0.2s;
+}
+
+.LevelCard:hover {
+  transform: translateY(-5px);
 }
 
 .LevelCard a {
