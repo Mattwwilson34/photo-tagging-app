@@ -4,6 +4,10 @@
   border-radius: 10px;
   height: 40vh;
   width: 30vh;
+  object-fit: contain;
+  background-size: 90%;
+  background-position: center;
+  background-color: rgb(194, 61, 57);
 }
 
 .LevelCard a {
