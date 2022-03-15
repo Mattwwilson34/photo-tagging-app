@@ -1,0 +1,16 @@
+.Nav {
+  background-color: #010101;
+  padding: 3vh;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.3rem;
+}
+
+.Nav a {
+  text-decoration: none;
+}
+
+.Nav a:visited {
+  color: white;
+}
