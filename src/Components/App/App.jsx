@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div>
       <Nav />
-      <LevelCard />
+      <LevelCard title='Gamecube' />
     </div>
   );
 };

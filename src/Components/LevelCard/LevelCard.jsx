@@ -1,8 +1,14 @@
-import './LevelCard.css'
+import './LevelCard.css';
 import React from 'react';
 
-const LevelCard = () => {
-  return <div>LevelCard COMPONENT</div>;
-  }; 
+const LevelCard = (props) => {
+  const { title } = props;
 
-  export default LevelCard;
+  return (
+    <div className='LevelCard'>
+      <span className='LevelCard-Title'>{title}</span>
+    </div>
+  );
+};
+
+export default LevelCard;
