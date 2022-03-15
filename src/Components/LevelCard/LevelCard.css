@@ -1,0 +1,19 @@
+.LevelCard {
+  margin: 15vh auto;
+  border: 4px solid white;
+  border-radius: 10px;
+  height: 40vh;
+  width: 30vh;
+}
+
+.LevelCard a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+}
+
+.LevelCard a:visited {
+  text-decoration: none;
+}
