@@ -11,7 +11,7 @@ const LevelCard = (props) => {
       style={{
         backgroundImage: `url(${img})`,
       }}>
-      <Link to='#'></Link>
+      <Link to='/game'></Link>
     </div>
   );
 };
