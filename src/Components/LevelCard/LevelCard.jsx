@@ -1,12 +1,15 @@
 import './LevelCard.css';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const LevelCard = (props) => {
   const { title } = props;
 
   return (
     <div className='LevelCard'>
-      <span className='LevelCard-Title'>{title}</span>
+      <Link to='#'>
+        <span className='LevelCard-Title'>{title}</span>
+      </Link>
     </div>
   );
 };
