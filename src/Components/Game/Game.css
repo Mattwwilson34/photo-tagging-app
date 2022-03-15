@@ -1,0 +1,7 @@
+.Game-Container {
+  display: flex;
+  justify-content: center;
+}
+.Game-Img {
+  width: 100vw;
+}
