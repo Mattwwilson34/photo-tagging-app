@@ -1,13 +1,19 @@
 import './DropdownMenu.css';
 import React from 'react';
 
-const DropdownMenu = () => {
+const DropdownMenu = (props) => {
+  const { mouseX, mouseY } = props;
   return (
-    <div>
+    <div
+      className='DropdownMenu'
+      style={{
+        left: `${mouseX}px`,
+        top: `${mouseY}px`,
+      }}>
       <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
+        <li>Mario</li>
+        <li>Mario</li>
+        <li>Mario</li>
       </ul>
     </div>
   );
