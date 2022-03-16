@@ -11,9 +11,11 @@ const DropdownMenu = (props) => {
         top: `${mouseY}px`,
       }}>
       <ul>
+        <li>Toad</li>
+        <li>Boo</li>
+        <li>Shiek</li>
         <li>Mario</li>
-        <li>Mario</li>
-        <li>Mario</li>
+        <li>Luigi</li>
       </ul>
     </div>
   );
