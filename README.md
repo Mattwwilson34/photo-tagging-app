@@ -9,3 +9,4 @@
         }} -->
 
         Code for determining character locations
+## What is this project
