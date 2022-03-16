@@ -34,3 +34,9 @@ SOFTWARE.
 
 Additional README Sections
 8. Badges
+https://img.shields.io/github/issues/Mattwwilson34/photo-tagging-app
+https://img.shields.io/github/forks/Mattwwilson34/photo-tagging-app
+https://img.shields.io/github/stars/Mattwwilson34/photo-tagging-app
+https://img.shields.io/github/license/Mattwwilson34/photo-tagging-app
+https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FMattwwilson34%2Fphoto-tagging-app
+
