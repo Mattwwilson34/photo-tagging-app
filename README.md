@@ -1,6 +1,6 @@
-#The Odin Project - Photo Tagging (Where's Waldo Clone)
+# The Odin Project - Photo Tagging (Where's Waldo Clone)
 
-##Description:
+## Description:
 This project was created as part ofThe Odin project curriculum. This app is video game console themed and allows users to select various exploded images of game consoles and search for various characters within the slected image. Users are timed on how long it takes them to find all characters. All user score are stored in a Firebase database and listed in on the leaderboards page.
 
 3. Table of Contents (Optional)
@@ -9,7 +9,7 @@ This project was created as part ofThe Odin project curriculum. This app is vide
 
 6. Credits
 
-###License
+### License:
 MIT License
 
 Copyright (c) [year] [fullname]
