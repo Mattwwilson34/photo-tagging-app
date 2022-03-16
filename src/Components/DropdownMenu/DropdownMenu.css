@@ -1,8 +1,27 @@
 .DropdownMenu {
   position: absolute;
   background-color: black;
-  padding: 5vh;
+  width: 10vw;
   color: white;
+  border: 3px solid white;
+  border-radius: 10px;
+}
+
+.DropdownMenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.DropdownMenu li {
+  margin: 1rem;
 }
 
 .visible {
