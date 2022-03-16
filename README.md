@@ -35,4 +35,5 @@ SOFTWARE.
 Additional README Sections
 8. Badges
 [![GitHub issues](https://img.shields.io/github/issues/Mattwwilson34/photo-tagging-app)](https://github.com/Mattwwilson34/photo-tagging-app/issues)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
