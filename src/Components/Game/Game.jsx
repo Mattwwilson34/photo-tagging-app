@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Gamecube from '../../Images/Gamecube.jpg';
 import DropdownMenu from '../DropdownMenu';
 import TargetArea from '../TargetArea';
+import printCoords from '../../Utils/print-coords';
 
 const Game = () => {
   const [clicked, setClicked] = useState(false);
@@ -19,6 +20,7 @@ const Game = () => {
           setClicked(!clicked);
           setMouseX(e.pageX);
           setMouseY(e.pageY);
+          printCoords(e);
         }}></img>
       {clicked ? <DropdownMenu mouseX={mouseX} mouseY={mouseY} /> : ''}
       {clicked ? <TargetArea mouseX={mouseX} mouseY={mouseY} /> : ''}
