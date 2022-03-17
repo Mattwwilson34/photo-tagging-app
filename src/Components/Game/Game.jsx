@@ -4,15 +4,23 @@ import Gamecube from '../../Images/Gamecube.jpg';
 import DropdownMenu from '../DropdownMenu';
 import TargetArea from '../TargetArea';
 import printCoords from '../../Utils/printCoords';
-import getCharacter from '../../Utils/getCharacter';
+import getCoords from '../../Utils/getCoords';
 
 const Game = () => {
   const [clicked, setClicked] = useState(false);
   const [mouseX, setMouseX] = useState(null);
   const [mouseY, setMouseY] = useState(null);
+  const [mousePercentX, setMousePercentX] = useState(null);
+  const [mousePercentY, setMousePercentY] = useState(null);
 
-  const toad = getCharacter('Mario');
-  console.log(toad);
+  const setMousePositions = (e) => {
+    const { percentX, percentY } = getCoords(e);
+    setMousePercentX(percentX);
+    setMousePercentY(percentY);
+    setMouseX(e.pageX);
+    setMouseY(e.pageY);
+    console.log('mouse positions set');
+  };
 
   return (
     <div className='Game-Container'>
@@ -22,11 +30,17 @@ const Game = () => {
         alt='Gamecube'
         onClick={(e) => {
           setClicked(!clicked);
-          setMouseX(e.pageX);
-          setMouseY(e.pageY);
+          setMousePositions(e);
           printCoords(e);
         }}></img>
-      {clicked && <DropdownMenu mouseX={mouseX} mouseY={mouseY} />}
+      {clicked && (
+        <DropdownMenu
+          mouseX={mouseX}
+          mouseY={mouseY}
+          mousePercentX={mousePercentX}
+          mousePercentY={mousePercentY}
+        />
+      )}
       {clicked && <TargetArea mouseX={mouseX} mouseY={mouseY} />}
     </div>
   );
