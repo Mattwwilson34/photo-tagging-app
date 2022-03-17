@@ -7,7 +7,7 @@ const DropdownMenu = (props) => {
     <div
       className='DropdownMenu'
       style={{
-        left: `${mouseX}px`,
+        left: `${mouseX + 50}px`,
         top: `${mouseY}px`,
       }}>
       <ul>
