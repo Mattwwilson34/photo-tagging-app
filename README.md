@@ -1,11 +1,14 @@
- <!-- onClick={(e) => {
-          const x = e.pageX;
-          const y = e.pageY;
-          const height = document.documentElement.scrollHeight;
-          const width = document.documentElement.scrollWidth;
-          const percentX = Math.floor((x / width) * 100);
-          const percentY = Math.floor((y / height) * 100);
-          console.log(percentX, percentY);
-        }} -->
+# The Odin Project - Photo Tagging (Where's Waldo Clone)
 
-        Code for determining character locations
+[![GitHub issues](https://img.shields.io/github/issues/Mattwwilson34/photo-tagging-app)](https://github.com/Mattwwilson34/photo-tagging-app/issues)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Description:
+
+This project was created as part ofThe Odin project curriculum. This app is video game console themed and allows users to select various exploded images of game consoles and search for various characters within the slected image. Users are timed on how long it takes them to find all characters. All user score are stored in a Firebase database and listed in on the leaderboards page.
+
+3. Table of Contents (Optional)
+
+4. How to Use the Project
+
+5. Credits
