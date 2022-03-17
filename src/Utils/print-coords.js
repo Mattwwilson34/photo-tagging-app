@@ -1,10 +1,10 @@
 /**
  * Prints values of mouse position on page, width/height of webpage, and percentage coords
  * @param {object} event
- * @returns object
+ * @returns console.table function with object
  */
 const printCoords = (event) => {
-  return console.log({
+  return console.table({
     pageX: event.pageX,
     pageY: event.pageY,
     pageWidth: document.documentElement.scrollWidth,
