@@ -3,12 +3,16 @@ import React, { useState } from 'react';
 import Gamecube from '../../Images/Gamecube.jpg';
 import DropdownMenu from '../DropdownMenu';
 import TargetArea from '../TargetArea';
-import printCoords from '../../Utils/print-coords';
+import printCoords from '../../Utils/printCoords';
+import getCharacter from '../../Utils/getCharacter';
 
 const Game = () => {
   const [clicked, setClicked] = useState(false);
   const [mouseX, setMouseX] = useState(null);
   const [mouseY, setMouseY] = useState(null);
+
+  const toad = getCharacter('Toad');
+  console.log(toad);
 
   return (
     <div className='Game-Container'>
