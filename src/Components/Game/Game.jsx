@@ -11,7 +11,7 @@ const Game = () => {
   const [mouseX, setMouseX] = useState(null);
   const [mouseY, setMouseY] = useState(null);
 
-  const toad = getCharacter('Toad');
+  const toad = getCharacter('Mario');
   console.log(toad);
 
   return (
@@ -26,8 +26,8 @@ const Game = () => {
           setMouseY(e.pageY);
           printCoords(e);
         }}></img>
-      {clicked ? <DropdownMenu mouseX={mouseX} mouseY={mouseY} /> : ''}
-      {clicked ? <TargetArea mouseX={mouseX} mouseY={mouseY} /> : ''}
+      {clicked && <DropdownMenu mouseX={mouseX} mouseY={mouseY} />}
+      {clicked && <TargetArea mouseX={mouseX} mouseY={mouseY} />}
     </div>
   );
 };
