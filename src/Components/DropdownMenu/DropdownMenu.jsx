@@ -1,8 +1,16 @@
 import './DropdownMenu.css';
 import React from 'react';
+import getCharacter from '../../Utils/getCharacter';
 
 const DropdownMenu = (props) => {
   const { mouseX, mouseY } = props;
+
+  const handleClick = async (e) => {
+    const characterName = e.target.textContent;
+    const character = await getCharacter(characterName);
+    console.log(character);
+  };
+
   return (
     <div
       className='DropdownMenu'
@@ -11,11 +19,11 @@ const DropdownMenu = (props) => {
         top: `${mouseY}px`,
       }}>
       <ul>
-        <li>Toad</li>
-        <li>Boo</li>
-        <li>Shiek</li>
-        <li>Mario</li>
-        <li>Luigi</li>
+        <li onClick={handleClick}>Toad</li>
+        <li onClick={handleClick}>Boo</li>
+        <li onClick={handleClick}>Shiek</li>
+        <li onClick={handleClick}>Mario</li>
+        <li onClick={handleClick}>Luigi</li>
       </ul>
     </div>
   );
