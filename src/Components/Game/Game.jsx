@@ -7,8 +7,10 @@ import getCoords from '../../Utils/getCoords';
 import Expire from '../Expire/Expire';
 import MessageOverlay from '../MessageOverlay/MessageOverlay';
 import Timer from '../Timer/Timer';
+import GameStartOverlay from '../GameStartOverlay/GameStartOverlay';
 
 const Game = () => {
+  const [gameStarted, setGameStarted] = useState(false);
   const [correct, setCorrect] = useState(false);
   const [clicked, setClicked] = useState(false);
   const [mouseX, setMouseX] = useState(null);
@@ -41,7 +43,6 @@ const Game = () => {
 
   return (
     <div className='Game-Container'>
-      <Timer />
       <img
         className='Game-Img'
         src={Gamecube}
@@ -54,6 +55,7 @@ const Game = () => {
             setCorrect(false);
           }
         }}></img>
+      {!gameStarted && <GameStartOverlay setGameStarted={setGameStarted} />}
       {correct && messageUserIfCorrect()}
       {clicked && characters.length > 0 && (
         <div>
