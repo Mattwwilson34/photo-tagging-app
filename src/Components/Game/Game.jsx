@@ -54,19 +54,22 @@ const Game = () => {
         }}></img>
       {correct && messageUserIfCorrect()}
       {clicked && characters.length > 0 && (
-        <DropdownMenu
-          mouseX={mouseX}
-          mouseY={mouseY}
-          mousePercentX={mousePercentX}
-          mousePercentY={mousePercentY}
-          characters={characters}
-          setCharacters={setCharacters}
-          setCorrect={setCorrect}
-        />
+        <div>
+          <DropdownMenu
+            mouseX={mouseX}
+            mouseY={mouseY}
+            mousePercentX={mousePercentX}
+            mousePercentY={mousePercentY}
+            characters={characters}
+            setCharacters={setCharacters}
+            setCorrect={setCorrect}
+          />
+          <TargetArea mouseX={mouseX} mouseY={mouseY} />
+        </div>
       )}
-      {clicked && characters.length > 0 && (
-        <TargetArea mouseX={mouseX} mouseY={mouseY} />
-      )}
+      {/* {clicked && characters.length > 0 && (
+        
+      )} */}
     </div>
   );
 };
