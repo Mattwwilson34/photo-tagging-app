@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Gamecube from '../../Images/Gamecube.jpg';
 import DropdownMenu from '../DropdownMenu';
 import TargetArea from '../TargetArea';
-import printCoords from '../../Utils/printCoords';
 import getCoords from '../../Utils/getCoords';
 import Expire from '../Expire/Expire';
 import MessageOverlay from '../MessageOverlay/MessageOverlay';
@@ -29,13 +28,12 @@ const Game = () => {
     setMousePercentY(percentY);
     setMouseX(e.pageX);
     setMouseY(e.pageY);
-    console.log('mouse positions set');
   };
 
   const messageUserIfCorrect = () => {
     return (
-      <Expire delay='2000'>
-        <MessageOverlay message='Correct!' />
+      <Expire delay='750'>
+        <MessageOverlay message='Correct!' mouseX={mouseX} mouseY={mouseY} />
       </Expire>
     );
   };
@@ -49,10 +47,13 @@ const Game = () => {
         onClick={(e) => {
           setClicked(!clicked);
           setMousePositions(e);
-          printCoords(e);
+          // Resets correct to false to allow messageOverlay to fire multiple times
+          if (correct) {
+            setCorrect(false);
+          }
         }}></img>
       {correct && messageUserIfCorrect()}
-      {clicked && (
+      {clicked && characters.length > 0 && (
         <DropdownMenu
           mouseX={mouseX}
           mouseY={mouseY}
@@ -63,7 +64,9 @@ const Game = () => {
           setCorrect={setCorrect}
         />
       )}
-      {clicked && <TargetArea mouseX={mouseX} mouseY={mouseY} />}
+      {clicked && characters.length > 0 && (
+        <TargetArea mouseX={mouseX} mouseY={mouseY} />
+      )}
     </div>
   );
 };

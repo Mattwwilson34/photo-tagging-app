@@ -6,7 +6,7 @@ const Expire = (props) => {
 
   useEffect(() => {
     setTimer(props.delay);
-  }, []);
+  }, [props.delay]);
 
   const setTimer = (delay) => {
     setTimeout(() => setIsVisible(false), delay);
