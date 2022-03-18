@@ -12,6 +12,13 @@ const Game = () => {
   const [mouseY, setMouseY] = useState(null);
   const [mousePercentX, setMousePercentX] = useState(null);
   const [mousePercentY, setMousePercentY] = useState(null);
+  const [characters, setCharacters] = useState([
+    'Toad',
+    'Boo',
+    'Shiek',
+    'Mario',
+    'Luigi',
+  ]);
 
   const setMousePositions = (e) => {
     const { percentX, percentY } = getCoords(e);
@@ -39,6 +46,8 @@ const Game = () => {
           mouseY={mouseY}
           mousePercentX={mousePercentX}
           mousePercentY={mousePercentY}
+          characters={characters}
+          setCharacters={setCharacters}
         />
       )}
       {clicked && <TargetArea mouseX={mouseX} mouseY={mouseY} />}

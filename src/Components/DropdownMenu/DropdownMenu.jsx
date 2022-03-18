@@ -1,18 +1,16 @@
 import './DropdownMenu.css';
-import React, { useState } from 'react';
 import getCharacter from '../../Utils/getCharacter';
 import between from '../../Utils/between';
 
 const DropdownMenu = (props) => {
-  const [characters, setCharacters] = useState([
-    'Toad',
-    'Boo',
-    'Shiek',
-    'Mario',
-    'Luigi',
-  ]);
-
-  const { mouseX, mouseY, mousePercentX, mousePercentY } = props;
+  const {
+    mouseX,
+    mouseY,
+    mousePercentX,
+    mousePercentY,
+    characters,
+    setCharacters,
+  } = props;
 
   const handleClick = async (e) => {
     const { characterPercentX, characterPercentY } = await getCharacterCoords(
