@@ -6,6 +6,7 @@ import TargetArea from '../TargetArea';
 import getCoords from '../../Utils/getCoords';
 import Expire from '../Expire/Expire';
 import MessageOverlay from '../MessageOverlay/MessageOverlay';
+import Timer from '../Timer/Timer';
 
 const Game = () => {
   const [correct, setCorrect] = useState(false);
@@ -40,6 +41,7 @@ const Game = () => {
 
   return (
     <div className='Game-Container'>
+      <Timer />
       <img
         className='Game-Img'
         src={Gamecube}
@@ -67,9 +69,6 @@ const Game = () => {
           <TargetArea mouseX={mouseX} mouseY={mouseY} />
         </div>
       )}
-      {/* {clicked && characters.length > 0 && (
-        
-      )} */}
     </div>
   );
 };
