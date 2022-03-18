@@ -6,7 +6,6 @@ import TargetArea from '../TargetArea';
 import getCoords from '../../Utils/getCoords';
 import Expire from '../Expire/Expire';
 import MessageOverlay from '../MessageOverlay/MessageOverlay';
-import Timer from '../Timer/Timer';
 import GameStartOverlay from '../GameStartOverlay/GameStartOverlay';
 
 const Game = () => {
