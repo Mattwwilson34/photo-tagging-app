@@ -1,8 +1,10 @@
-import './MessageOverlay.css'
+import './MessageOverlay.css';
 import React from 'react';
 
-const MessageOverlay = () => {
-  return <div>MessageOverlay COMPONENT</div>;
-  }; 
+const MessageOverlay = (props) => {
+  const { message } = props;
 
-  export default MessageOverlay;
+  return <div className='MessageOverlay'>{message}</div>;
+};
+
+export default MessageOverlay;

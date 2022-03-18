@@ -5,8 +5,11 @@ import DropdownMenu from '../DropdownMenu';
 import TargetArea from '../TargetArea';
 import printCoords from '../../Utils/printCoords';
 import getCoords from '../../Utils/getCoords';
+import Expire from '../Expire/Expire';
+import MessageOverlay from '../MessageOverlay/MessageOverlay';
 
 const Game = () => {
+  const [correct, setCorrect] = useState(false);
   const [clicked, setClicked] = useState(false);
   const [mouseX, setMouseX] = useState(null);
   const [mouseY, setMouseY] = useState(null);
@@ -29,6 +32,14 @@ const Game = () => {
     console.log('mouse positions set');
   };
 
+  const messageUserIfCorrect = () => {
+    return (
+      <Expire delay='2000'>
+        <MessageOverlay message='Correct!' />
+      </Expire>
+    );
+  };
+
   return (
     <div className='Game-Container'>
       <img
@@ -40,6 +51,7 @@ const Game = () => {
           setMousePositions(e);
           printCoords(e);
         }}></img>
+      {correct && messageUserIfCorrect()}
       {clicked && (
         <DropdownMenu
           mouseX={mouseX}
@@ -48,6 +60,7 @@ const Game = () => {
           mousePercentY={mousePercentY}
           characters={characters}
           setCharacters={setCharacters}
+          setCorrect={setCorrect}
         />
       )}
       {clicked && <TargetArea mouseX={mouseX} mouseY={mouseY} />}

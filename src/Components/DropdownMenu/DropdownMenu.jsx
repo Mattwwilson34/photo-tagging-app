@@ -10,6 +10,7 @@ const DropdownMenu = (props) => {
     mousePercentY,
     characters,
     setCharacters,
+    setCorrect,
   } = props;
 
   const handleClick = async (e) => {
@@ -22,6 +23,7 @@ const DropdownMenu = (props) => {
     );
     if (characterFound) {
       removeCharacterFromDropdown(e);
+      setCorrect(true);
     }
   };
 
