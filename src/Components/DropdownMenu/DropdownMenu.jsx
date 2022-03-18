@@ -21,8 +21,8 @@ const DropdownMenu = (props) => {
       characterPercentY
     );
     if (characterFound) {
-      console.log('removed');
-      removeCharacterFromDropdown(e);
+      changeStyleIfCorrect(e);
+      // removeCharacterFromDropdown(e);
     }
   };
 
@@ -42,6 +42,11 @@ const DropdownMenu = (props) => {
     ) {
       return true;
     } else return false;
+  };
+
+  const changeStyleIfCorrect = (e) => {
+    console.log('setting style');
+    e.target.style.backgroundColor = 'green';
   };
 
   const removeCharacterFromDropdown = (e) => {
