@@ -1,7 +1,7 @@
 .Timer {
-  position: absolute;
-  top: 75%;
-  left: 50%;
+  position: fixed;
+  top: 8%;
+  left: 0%;
   font-size: 2rem;
   padding: 1rem;
   background-color: black;

@@ -7,6 +7,7 @@ import getCoords from '../../Utils/getCoords';
 import Expire from '../Expire/Expire';
 import MessageOverlay from '../MessageOverlay/MessageOverlay';
 import GameStartOverlay from '../GameStartOverlay/GameStartOverlay';
+import Timer from '../Timer/Timer';
 
 const Game = () => {
   const [gameStarted, setGameStarted] = useState(false);
@@ -55,6 +56,7 @@ const Game = () => {
           }
         }}></img>
       {!gameStarted && <GameStartOverlay setGameStarted={setGameStarted} />}
+      <Timer />
       {correct && messageUserIfCorrect()}
       {clicked && characters.length > 0 && (
         <div>
