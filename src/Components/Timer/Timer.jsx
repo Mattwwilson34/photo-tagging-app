@@ -1,9 +1,9 @@
 import './Timer.css';
 import React, { useState, useEffect } from 'react';
 
-const Timer = () => {
+const Timer = (props) => {
   const [time, setTime] = useState(0);
-  const [timerOn, setTimeOn] = useState(false);
+  const { timerOn } = props;
 
   useEffect(() => {
     let interval = null;
