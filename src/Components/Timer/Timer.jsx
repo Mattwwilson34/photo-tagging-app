@@ -3,27 +3,31 @@ import React, { useState, useEffect } from 'react';
 
 const Timer = () => {
   const [time, setTime] = useState(0);
-  const [timeOn, setTimeOn] = useState(false);
+  const [timerOn, setTimeOn] = useState(false);
 
   useEffect(() => {
     let interval = null;
 
-    if (timeOn) {
+    if (timerOn) {
       interval = setInterval(() => {
         setTime((prevTime) => prevTime + 10);
       }, 10);
     } else {
       clearInterval(interval);
     }
-  }, [timeOn]);
+
+    return () => clearInterval(interval);
+  }, [timerOn]);
 
   return (
     <div className='Timer'>
-      {time}
+      <span>{('0' + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
+      <span>{('0' + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
+      <span>{('0' + ((time / 10) % 100)).slice(-2)}</span>
       <div>
-        <button onClick={setTimeOn(true)}>On</button>
-        <button onClick={setTimeOn(false)}>Off</button>
-        <button onClick={setTime(0)}>Reset</button>
+        <button onClick={() => setTimeOn(true)}>On</button>
+        <button onClick={() => setTimeOn(false)}>Off</button>
+        <button onClick={() => setTime(0)}>Reset</button>
       </div>
     </div>
   );
