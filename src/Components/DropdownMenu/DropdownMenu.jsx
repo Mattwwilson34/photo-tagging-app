@@ -11,6 +11,7 @@ const DropdownMenu = (props) => {
     characters,
     setCharacters,
     setCorrect,
+    checkIfGameOver,
   } = props;
 
   const handleClick = async (e) => {
@@ -24,6 +25,7 @@ const DropdownMenu = (props) => {
     if (characterFound) {
       removeCharacterFromDropdown(e);
       setCorrect(true);
+      checkIfGameOver();
     }
   };
 

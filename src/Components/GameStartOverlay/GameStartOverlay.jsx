@@ -2,7 +2,7 @@ import './GameStartOverlay.css';
 import React from 'react';
 
 const GameStartOverlay = (props) => {
-  const { setGameStarted, setTimeOn } = props;
+  const { setGameStarted, setTimerOn } = props;
   return (
     <div className='GameStartOverlay'>
       <div>
@@ -10,7 +10,7 @@ const GameStartOverlay = (props) => {
         <button
           onClick={() => {
             setGameStarted(true);
-            setTimeOn(true);
+            setTimerOn(true);
           }}>
           Start the Game!
         </button>

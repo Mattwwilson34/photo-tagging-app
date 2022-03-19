@@ -11,7 +11,8 @@ import Timer from '../Timer/Timer';
 
 const Game = () => {
   const [gameStarted, setGameStarted] = useState(false);
-  const [timerOn, setTimeOn] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
+  const [timerOn, setTimerOn] = useState(false);
   const [correct, setCorrect] = useState(false);
   const [clicked, setClicked] = useState(false);
   const [mouseX, setMouseX] = useState(null);
@@ -42,6 +43,12 @@ const Game = () => {
     );
   };
 
+  const checkIfGameOver = () => {
+    if (characters.length <= 1) {
+      setTimerOn(false);
+    }
+  };
+
   return (
     <div className='Game-Container'>
       <img
@@ -51,8 +58,6 @@ const Game = () => {
         onClick={(e) => {
           setClicked(!clicked);
           setMousePositions(e);
-          console.log(timerOn);
-          // Resets correct to false to allow messageOverlay to fire multiple times
           if (correct) {
             setCorrect(false);
           }
@@ -61,7 +66,7 @@ const Game = () => {
       {!gameStarted && (
         <GameStartOverlay
           setGameStarted={setGameStarted}
-          setTimeOn={setTimeOn}
+          setTimerOn={setTimerOn}
         />
       )}
       {correct && messageUserIfCorrect()}
@@ -75,6 +80,7 @@ const Game = () => {
             characters={characters}
             setCharacters={setCharacters}
             setCorrect={setCorrect}
+            checkIfGameOver={checkIfGameOver}
           />
           <TargetArea mouseX={mouseX} mouseY={mouseY} />
         </div>
