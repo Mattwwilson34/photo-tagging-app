@@ -6,6 +6,7 @@ import App from './Components/App';
 import Game from './Components/Game';
 import Levels from './Routes/Levels';
 import Leaderboard from './Components/Leaderboard';
+import Info from './Components/Info';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,6 +16,7 @@ ReactDOM.render(
           <Route path='/' element={<Levels />} />
           <Route path='game' element={<Game />} />
           <Route path='leaderboard' element={<Leaderboard />} />
+          <Route path='info' element={<Info />} />
         </Route>
       </Routes>
     </BrowserRouter>
