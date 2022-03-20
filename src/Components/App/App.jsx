@@ -5,7 +5,7 @@ import Nav from '../Nav';
 
 const App = () => {
   return (
-    <div>
+    <div className='App'>
       <Nav />
       <Outlet />
     </div>
