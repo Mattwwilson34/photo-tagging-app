@@ -49,4 +49,19 @@ const calcUserTimeToComplete = (userTimeData) => {
   return timeDifference.toFixed(2);
 };
 
-export { setUserEndTime, setUserTimeToComplete };
+// update username from input when game is over
+const updateUsername = async (userID, username) => {
+  const userRef = doc(db, 'Users', userID);
+  const docSnap = await getDoc(userRef);
+
+  if (docSnap.exists()) {
+    await updateDoc(userRef, {
+      name: username,
+    });
+    console.log('Username updated to:', username);
+  } else {
+    console.log('No such document!');
+  }
+};
+
+export { setUserEndTime, setUserTimeToComplete, updateUsername };
