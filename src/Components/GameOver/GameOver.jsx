@@ -11,14 +11,19 @@ const GameOver = (props) => {
 
     // leaves username anonymous if input blank or updates to provided input text
     if (username.length === 0) {
-      console.log('Input blank, username unchanged');
+      disableButton(submitButton);
       return;
     } else {
       updateUsername(currentUserID, username);
     }
 
     // disable button to prevent addional PUT requests
-    submitButton.disabled = true;
+    disableButton(submitButton);
+  };
+
+  const disableButton = (button) => {
+    button.disabled = true;
+    button.style.cursor = 'not-allowed';
   };
 
   return (
