@@ -66,14 +66,22 @@ const Game = () => {
         src={Gamecube}
         alt='Gamecube'
         onClick={handleImgClick}></img>
-      {gameOver && <GameOver />}
+
+      {/* Check if game over */}
+      {gameOver && <GameOver currentUserID={currentUserID} />}
+
+      {/* If game has not started display GameStartOverlay*/}
       {!gameStarted && (
         <GameStartOverlay
           setGameStarted={setGameStarted}
           setCurrentUserID={setCurrentUserID}
         />
       )}
+
+      {/* If user guessed correctly message user */}
       {correct && messageUserIfCorrect()}
+
+      {/* Display Dropdown/TargetArea if click = true and there are still characters to find */}
       {clicked && characters.length > 0 && (
         <Click
           setCorrect={setCorrect}
