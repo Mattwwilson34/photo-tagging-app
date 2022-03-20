@@ -1,8 +1,6 @@
 import firebaseApp from '../Firebase/Firebase';
 import {
   getFirestore,
-  collection,
-  addDoc,
   serverTimestamp,
   doc,
   updateDoc,
@@ -11,39 +9,34 @@ import {
 
 const db = getFirestore(firebaseApp);
 
-// Initial time stamp
-const setUser = async () => {
-  const UserRef = await addDoc(collection(db, 'Users'), {
-    name: 'Anonymous',
-    timeStart: serverTimestamp(),
-  });
-  console.log('Anonymous User + start time added w/ ID: ', UserRef.id);
-};
 // End time stamp
 const setUserEndTime = async (userID) => {
-  const UserRef = doc(db, 'Users', userID);
-  await updateDoc(UserRef, {
+  const userRef = doc(db, 'Users', userID);
+  await updateDoc(userRef, {
     timeEnd: serverTimestamp(),
   });
+  console.log('User end time set', userID);
 };
 
 const setUserTimeToComplete = async (userID) => {
-  const UserRef = doc(db, 'Users', userID);
-  const docSnap = await getDoc(UserRef);
+  const userRef = doc(db, 'Users', userID);
+  const docSnap = await getDoc(userRef);
 
   if (docSnap.exists()) {
     const userTimeData = docSnap.data();
     const timeToComplete = calcUserTimeToComplete(userTimeData);
 
-    await updateDoc(UserRef, {
+    await updateDoc(userRef, {
       totalTime: timeToComplete,
     });
+    console.log('Total time', timeToComplete);
   } else {
     console.log('No such document!');
   }
 };
 
 const calcUserTimeToComplete = (userTimeData) => {
+  console.log(userTimeData);
   const startTime =
     userTimeData.timeStart.seconds * 1000000000 +
     userTimeData.timeStart.nanoseconds;
@@ -54,4 +47,4 @@ const calcUserTimeToComplete = (userTimeData) => {
   return timeDifference.toFixed(2);
 };
 
-export { setUser, setUserEndTime, setUserTimeToComplete };
+export { setUserEndTime, setUserTimeToComplete };
