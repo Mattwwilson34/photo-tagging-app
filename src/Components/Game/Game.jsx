@@ -7,13 +7,12 @@ import getCoords from '../../Utils/getCoords';
 import Expire from '../Expire/Expire';
 import MessageOverlay from '../MessageOverlay/MessageOverlay';
 import GameStartOverlay from '../GameStartOverlay/GameStartOverlay';
-import Timer from '../Timer/Timer';
+import { setUserEndTime, setUserTimeToComplete } from '../../Utils/setUser';
 
 const Game = () => {
-  const [currentUser, setCurrentUser] = useState(null);
   const [gameStarted, setGameStarted] = useState(false);
+  const [currentUserID, setCurrentUserID] = useState(null);
   const [gameOver, setGameOver] = useState(false);
-  const [timerOn, setTimerOn] = useState(false);
   const [correct, setCorrect] = useState(false);
   const [clicked, setClicked] = useState(false);
   const [mouseX, setMouseX] = useState(null);
@@ -44,9 +43,10 @@ const Game = () => {
     );
   };
 
-  const checkIfGameOver = () => {
+  const checkIfGameOver = async () => {
     if (characters.length <= 1) {
-      setTimerOn(false);
+      await setUserEndTime(currentUserID);
+      await setUserTimeToComplete(currentUserID);
     }
   };
 
@@ -63,11 +63,10 @@ const Game = () => {
             setCorrect(false);
           }
         }}></img>
-      <Timer timerOn={timerOn} />
       {!gameStarted && (
         <GameStartOverlay
           setGameStarted={setGameStarted}
-          setTimerOn={setTimerOn}
+          setCurrentUserID={setCurrentUserID}
         />
       )}
       {correct && messageUserIfCorrect()}
