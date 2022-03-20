@@ -1,13 +1,13 @@
 import './Game.css';
 import React, { useState } from 'react';
 import Gamecube from '../../Images/Gamecube.jpg';
-import DropdownMenu from '../DropdownMenu';
-import TargetArea from '../TargetArea';
+import Click from '../Click/Click';
 import getCoords from '../../Utils/getCoords';
 import Expire from '../Expire/Expire';
 import MessageOverlay from '../MessageOverlay/MessageOverlay';
 import GameStartOverlay from '../GameStartOverlay/GameStartOverlay';
 import { setUserEndTime, setUserTimeToComplete } from '../../Utils/setUser';
+import GameOver from '../GameOver/GameOver';
 
 const Game = () => {
   const [gameStarted, setGameStarted] = useState(false);
@@ -26,6 +26,14 @@ const Game = () => {
     'Mario',
     'Luigi',
   ]);
+
+  const handleImgClick = (e) => {
+    setClicked(!clicked);
+    setMousePositions(e);
+    if (correct) {
+      setCorrect(false);
+    }
+  };
 
   const setMousePositions = (e) => {
     const { percentX, percentY } = getCoords(e);
@@ -56,13 +64,8 @@ const Game = () => {
         className='Game-Img'
         src={Gamecube}
         alt='Gamecube'
-        onClick={(e) => {
-          setClicked(!clicked);
-          setMousePositions(e);
-          if (correct) {
-            setCorrect(false);
-          }
-        }}></img>
+        onClick={handleImgClick}></img>
+      {gameOver && <GameOver />}
       {!gameStarted && (
         <GameStartOverlay
           setGameStarted={setGameStarted}
@@ -71,19 +74,15 @@ const Game = () => {
       )}
       {correct && messageUserIfCorrect()}
       {clicked && characters.length > 0 && (
-        <div>
-          <DropdownMenu
-            mouseX={mouseX}
-            mouseY={mouseY}
-            mousePercentX={mousePercentX}
-            mousePercentY={mousePercentY}
-            characters={characters}
-            setCharacters={setCharacters}
-            setCorrect={setCorrect}
-            checkIfGameOver={checkIfGameOver}
-          />
-          <TargetArea mouseX={mouseX} mouseY={mouseY} />
-        </div>
+        <Click
+          setCorrect={setCorrect}
+          mouseX={mouseX}
+          mouseY={mouseY}
+          mousePercentX={mousePercentX}
+          mousePercentY={mousePercentY}
+          characters={characters}
+          setCharacters={setCharacters}
+          checkIfGameOver={checkIfGameOver}></Click>
       )}
     </div>
   );
