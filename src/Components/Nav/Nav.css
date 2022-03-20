@@ -4,14 +4,16 @@
   left: 0;
   width: 100%;
   background-color: #010101;
-  padding: 3vh;
+  padding: 3vh 0vh;
   color: white;
-  display: flex;
-  justify-content: space-around;
   font-size: 1.3rem;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .Nav a {
+  width: 20%;
+  text-align: center;
   text-decoration: none;
   color: white;
 }
