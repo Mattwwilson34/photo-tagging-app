@@ -10,7 +10,7 @@ const Nav = () => {
 
   return (
     <nav className='Nav'>
-      <NavLink to='#'>Info</NavLink>
+      <NavLink to='info'>Info</NavLink>
       <NavLink to='/' className='Nav-Title'>
         {({ isActive }) => (isActive ? 'Photo tagging app' : 'Home')}
       </NavLink>
