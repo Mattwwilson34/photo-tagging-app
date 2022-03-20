@@ -14,6 +14,7 @@ const Click = (props) => {
         characters={props.characters}
         setCharacters={props.setCharacters}
         setCorrect={props.setCorrect}
+        setClicked={props.setClicked}
         checkIfGameOver={props.checkIfGameOver}
       />
       <TargetArea mouseX={props.mouseX} mouseY={props.mouseY} />

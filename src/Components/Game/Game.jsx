@@ -82,9 +82,10 @@ const Game = () => {
       {correct && messageUserIfCorrect()}
 
       {/* Display Dropdown/TargetArea if click = true and there are still characters to find */}
-      {clicked && characters.length > 0 && (
+      {clicked && (
         <Click
           setCorrect={setCorrect}
+          setClicked={setClicked}
           mouseX={mouseX}
           mouseY={mouseY}
           mousePercentX={mousePercentX}

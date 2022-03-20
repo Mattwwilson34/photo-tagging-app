@@ -11,6 +11,7 @@ const DropdownMenu = (props) => {
     characters,
     setCharacters,
     setCorrect,
+    setClicked,
     checkIfGameOver,
   } = props;
 
@@ -25,6 +26,7 @@ const DropdownMenu = (props) => {
     if (characterFound) {
       removeCharacterFromDropdown(e);
       setCorrect(true);
+      setClicked(false);
       checkIfGameOver();
     }
   };
