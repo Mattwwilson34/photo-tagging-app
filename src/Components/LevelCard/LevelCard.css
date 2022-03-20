@@ -1,5 +1,9 @@
+.LevelCard-Wrapper {
+  padding-top: 20vh;
+}
+
 .LevelCard {
-  margin: 20vh auto;
+  margin: 0 auto;
   border: 4px solid white;
   border-radius: 10px;
   height: 40vh;

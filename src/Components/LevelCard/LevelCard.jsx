@@ -6,12 +6,14 @@ const LevelCard = (props) => {
   const { img } = props;
 
   return (
-    <div
-      className='LevelCard'
-      style={{
-        backgroundImage: `url(${img})`,
-      }}>
-      <Link to='/game'></Link>
+    <div className='LevelCard-Wrapper'>
+      <div
+        className='LevelCard'
+        style={{
+          backgroundImage: `url(${img})`,
+        }}>
+        <Link to='/game'></Link>
+      </div>
     </div>
   );
 };

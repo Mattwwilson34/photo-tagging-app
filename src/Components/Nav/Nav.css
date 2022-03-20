@@ -9,6 +9,7 @@
   font-size: 1.3rem;
   display: flex;
   justify-content: space-evenly;
+  z-index: 999;
 }
 
 .Nav a {
