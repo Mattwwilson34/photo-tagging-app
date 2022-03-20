@@ -5,9 +5,23 @@ import {
   doc,
   updateDoc,
   getDoc,
+  collection,
+  query,
+  getDocs,
 } from 'firebase/firestore';
 
 const db = getFirestore(firebaseApp);
+
+// Get users
+const getUsers = async () => {
+  const usersRef = query(collection(db, 'Users'));
+
+  const querySnapshot = await getDocs(usersRef);
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    console.log(doc.data().name);
+  });
+};
 
 // End time stamp
 const setUserEndTime = async (userID) => {
@@ -46,7 +60,7 @@ const calcUserTimeToComplete = (userTimeData) => {
     userTimeData.timeEnd.seconds * 1000000000 +
     userTimeData.timeEnd.nanoseconds;
   const timeDifference = (endTime - startTime) / 1000000000;
-  return timeDifference.toFixed(2);
+  return parseFloat(timeDifference.toFixed(2));
 };
 
 // update username from input when game is over
@@ -64,4 +78,4 @@ const updateUsername = async (userID, username) => {
   }
 };
 
-export { setUserEndTime, setUserTimeToComplete, updateUsername };
+export { getUsers, setUserEndTime, setUserTimeToComplete, updateUsername };
