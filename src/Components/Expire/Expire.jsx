@@ -5,12 +5,14 @@ const Expire = (props) => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    setTimer(props.delay);
-  }, [props.delay]);
+    let interval = null;
 
-  const setTimer = (delay) => {
-    setTimeout(() => setIsVisible(false), delay);
-  };
+    interval = setTimeout(() => {
+      setIsVisible(false);
+    }, props.delay);
+
+    return () => clearInterval(interval);
+  }, [props.delay]);
 
   return isVisible ? <>{props.children}</> : <span />;
 };
