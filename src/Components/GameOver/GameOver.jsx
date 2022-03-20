@@ -1,9 +1,11 @@
 import './GameOver.css';
 import React from 'react';
 import { updateUsername } from '../../Utils/setUser';
+import { useNavigate } from 'react-router-dom';
 
 const GameOver = (props) => {
   const { currentUserID } = props;
+  let navigate = useNavigate();
 
   const handleSubmit = (e) => {
     const submitButton = e.target;
@@ -19,6 +21,9 @@ const GameOver = (props) => {
 
     // disable button to prevent addional PUT requests
     disableButton(submitButton);
+
+    // redirect user to homepage
+    navigate(-1);
   };
 
   const disableButton = (button) => {
