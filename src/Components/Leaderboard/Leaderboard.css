@@ -1,0 +1,32 @@
+.Leaderboard {
+  margin-top: 20vh;
+  font-size: 1.25rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.Leaderboard table {
+  border-top: 3px solid white;
+  border-left: 3px solid white;
+  border-right: 3px solid white;
+}
+
+.Leaderboard tr {
+  background-color: #010101;
+}
+
+.Leaderboard th {
+  text-align: left;
+  border-bottom: 3px solid white;
+  padding: 2rem;
+}
+
+.Leaderboard td {
+  border-bottom: 3px solid white;
+  padding: 2rem;
+}
+
+.leaderboard tbody > tr:nth-child(3) {
+  border: none;
+}
