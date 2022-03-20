@@ -31,21 +31,23 @@ const Leaderboard = () => {
       <table cellSpacing={0}>
         <thead>
           <tr>
+            <th>Rank</th>
             <th>Name</th>
             <th>Score(s)</th>
           </tr>
         </thead>
         <tbody>
           {users
-            ? users.map((user) => {
+            ? users.map((user, i) => {
                 return (
                   <tr>
+                    <td className='Leaderboard-Rank'>{i + 1}</td>
                     <td>{user.name}</td>
-                    <td>{user.totalTime}</td>
+                    <td className='Leaderboard-Score'>{user.totalTime}</td>
                   </tr>
                 );
               })
-            : 'Loading'}
+            : 'Loading Leaderboard'}
         </tbody>
       </table>
     </div>
