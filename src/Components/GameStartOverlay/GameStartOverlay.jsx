@@ -3,9 +3,9 @@ import React from 'react';
 import firebaseApp from '../../Firebase/Firebase';
 import {
   collection,
-  addDoc,
   serverTimestamp,
   getFirestore,
+  addDoc,
 } from 'firebase/firestore';
 
 const GameStartOverlay = (props) => {
@@ -13,7 +13,6 @@ const GameStartOverlay = (props) => {
 
   // Setting DB
   const db = getFirestore(firebaseApp);
-
   // Initialize user
   const setUser = async () => {
     const userRef = await addDoc(collection(db, 'Users'), {
