@@ -9,7 +9,7 @@ import {
 } from 'firebase/firestore';
 
 const GameStartOverlay = (props) => {
-  const { setGameStarted, setTimerOn, setCurrentUserID } = props;
+  const { setGameStarted, setCurrentUserID } = props;
 
   // Setting DB
   const db = getFirestore(firebaseApp);
@@ -31,7 +31,6 @@ const GameStartOverlay = (props) => {
           onClick={() => {
             setUser();
             setGameStarted(true);
-            setTimerOn(true);
           }}>
           Start the Game!
         </button>
