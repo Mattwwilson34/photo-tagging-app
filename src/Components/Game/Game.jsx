@@ -55,6 +55,7 @@ const Game = () => {
     if (characters.length <= 1) {
       await setUserEndTime(currentUserID);
       await setUserTimeToComplete(currentUserID);
+      setGameOver(true);
     }
   };
 
