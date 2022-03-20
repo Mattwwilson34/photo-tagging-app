@@ -10,6 +10,7 @@ import GameStartOverlay from '../GameStartOverlay/GameStartOverlay';
 import Timer from '../Timer/Timer';
 
 const Game = () => {
+  const [currentUser, setCurrentUser] = useState(null);
   const [gameStarted, setGameStarted] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [timerOn, setTimerOn] = useState(false);
