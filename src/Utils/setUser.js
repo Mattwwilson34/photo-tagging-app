@@ -18,6 +18,7 @@ const setUserEndTime = async (userID) => {
   console.log('User end time set', userID);
 };
 
+// store total time to complete game
 const setUserTimeToComplete = async (userID) => {
   const userRef = doc(db, 'Users', userID);
   const docSnap = await getDoc(userRef);
@@ -35,6 +36,7 @@ const setUserTimeToComplete = async (userID) => {
   }
 };
 
+// calc total time to complete game
 const calcUserTimeToComplete = (userTimeData) => {
   console.log(userTimeData);
   const startTime =
