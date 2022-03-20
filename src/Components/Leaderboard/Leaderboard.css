@@ -1,15 +1,16 @@
 .Leaderboard {
-  margin-top: 20vh;
+  margin-top: 10vh;
   font-size: 1.25rem;
   color: white;
   display: flex;
   justify-content: center;
+  padding: 5vh;
 }
 
-.Leaderboard table {
-  border-top: 3px solid white;
-  border-left: 3px solid white;
-  border-right: 3px solid white;
+table {
+  background-color: #010101;
+  padding: 1% 0;
+  border-radius: 10px;
 }
 
 .Leaderboard tr {
@@ -19,7 +20,7 @@
 .Leaderboard th {
   text-align: left;
   border-bottom: 3px solid white;
-  padding: 2rem;
+  padding: 2rem 5rem;
 }
 
 .Leaderboard td {
@@ -27,6 +28,22 @@
   padding: 2rem;
 }
 
-.leaderboard tbody > tr:nth-child(3) {
+table > tbody > tr:last-child td {
   border: none;
+}
+
+table > tbody > tr:nth-child(1) {
+  background-color: #d6af36;
+}
+
+table > tbody > tr:nth-child(2) {
+  background-color: #a7a7ad;
+}
+table > tbody > tr:nth-child(3) {
+  background-color: #a77044;
+}
+
+.Leaderboard-Rank,
+.Leaderboard-Score {
+  text-align: center;
 }
