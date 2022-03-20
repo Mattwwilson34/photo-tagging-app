@@ -14,7 +14,7 @@ const GameOver = (props) => {
     // leaves username anonymous if input blank or updates to provided input text
     if (username.length === 0) {
       disableButton(submitButton);
-      navigate(-1);
+      navigate('/leaderboard');
       return;
     } else {
       updateUsername(currentUserID, username);
@@ -24,7 +24,7 @@ const GameOver = (props) => {
     disableButton(submitButton);
 
     // redirect user to homepage
-    navigate(-1);
+    navigate('/leaderboard');
   };
 
   const disableButton = (button) => {
