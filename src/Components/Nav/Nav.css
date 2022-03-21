@@ -17,6 +17,7 @@
   text-align: center;
   text-decoration: none;
   color: white;
+  text-underline-offset: 0.3rem;
 }
 
 .Nav a:hover {

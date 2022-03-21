@@ -10,8 +10,15 @@ const Nav = () => {
 
   return (
     <nav className='Nav'>
-      <NavLink to='info'>Info</NavLink>
-      <NavLink to='/' className='Nav-Title'>
+      <NavLink
+        to='info'
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}>
+        Info
+      </NavLink>
+      <NavLink
+        to='/'
+        className='Nav-Title'
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}>
         {({ isActive }) => (isActive ? 'Photo tagging app' : 'Home')}
       </NavLink>
       <NavLink
