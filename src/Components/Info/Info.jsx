@@ -20,11 +20,11 @@ const Info = () => {
         <li>ReactJS</li>
         <li>React Router</li>
         <li>Firebase Firestore</li>
-        <li>Jest</li>
         <li>React testing-library</li>
+        <li>Jest</li>
       </ul>
 
-      <h2>Some of the unique challenges to this project included:</h2>
+      <h2>Unique project challenges:</h2>
       <ul>
         <li>Managing large images without distortion</li>
         <li>Image coordinate calculations</li>
