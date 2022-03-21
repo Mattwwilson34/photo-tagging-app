@@ -44,7 +44,6 @@ const setUserTimeToComplete = async (userID) => {
     await updateDoc(userRef, {
       totalTime: timeToComplete,
     });
-    console.log('Total time', timeToComplete);
   } else {
     console.log('No such document!');
   }
@@ -52,7 +51,6 @@ const setUserTimeToComplete = async (userID) => {
 
 // calc total time to complete game
 const calcUserTimeToComplete = (userTimeData) => {
-  console.log(userTimeData);
   const startTime =
     userTimeData.timeStart.seconds * 1000000000 +
     userTimeData.timeStart.nanoseconds;
@@ -72,7 +70,6 @@ const updateUsername = async (userID, username) => {
     await updateDoc(userRef, {
       name: username,
     });
-    console.log('Username updated to:', username);
   } else {
     console.log('No such document!');
   }
