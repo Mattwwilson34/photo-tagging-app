@@ -1,5 +1,6 @@
 import './Leaderboard.css';
 import React, { useState, useEffect } from 'react';
+import uniqid from 'uniqid';
 import firebaseApp from '../../Firebase/Firebase';
 import {
   getFirestore,
@@ -37,17 +38,21 @@ const Leaderboard = () => {
           </tr>
         </thead>
         <tbody>
-          {users
-            ? users.map((user, i) => {
-                return (
-                  <tr>
-                    <td className='Leaderboard-Rank'>{i + 1}</td>
-                    <td>{user.name}</td>
-                    <td className='Leaderboard-Score'>{user.totalTime}</td>
-                  </tr>
-                );
-              })
-            : 'Loading Leaderboard'}
+          {users ? (
+            users.map((user, i) => {
+              return (
+                <tr key={uniqid()}>
+                  <td className='Leaderboard-Rank'>{i + 1}</td>
+                  <td>{user.name}</td>
+                  <td className='Leaderboard-Score'>{user.totalTime}</td>
+                </tr>
+              );
+            })
+          ) : (
+            <tr>
+              <td>Loading</td>
+            </tr>
+          )}
         </tbody>
       </table>
     </div>
