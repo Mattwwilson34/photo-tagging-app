@@ -51,6 +51,38 @@ const Info = () => {
           to store their score on the leaderboad
         </li>
       </ul>
+
+      <h2>Credits</h2>
+      <ul>
+        <li>
+          Project inspiration was from Kevin Figenshu aka @KFig21. It was his
+          project submission that lead me to essentially cloning his project due
+          to my love of all things Nintendo. No source code was viewed or copied
+          for my clone.
+          <ul>
+            <li>
+              <a href='https://kfig21.github.io/photo_tagging_app/'>
+                @KFig21's Game and Seek
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          The Gamecube image used in this project was created by Pierre Roussel.
+          His art can be viewed and purchased at:
+        </li>
+        <ul>
+          <li>
+            <a href='https://www.etsy.com/shop/Angerinet'>ETSY</a>
+          </li>
+          <li>
+            <a href='https://www.artstation.com/artwork/oOVVlJ'>Art Station</a>
+          </li>
+          <li>
+            <a href='https://www.instagram.com/angerinet/?hl=en'>Instagram</a>
+          </li>
+        </ul>
+      </ul>
     </div>
   );
 };
