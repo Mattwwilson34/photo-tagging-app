@@ -1,5 +1,5 @@
 .LevelCard-Wrapper {
-  padding-top: 20vh;
+  padding-top: 6vh;
 }
 
 .LevelCard {
@@ -29,4 +29,22 @@
 
 .LevelCard a:visited {
   text-decoration: none;
+}
+
+.LevelCard-GameplayInfo {
+  background-color: #010101;
+  color: white;
+  max-width: 100ch;
+  padding: 0.25rem 1rem;
+  border-radius: 10px;
+  margin: 2rem auto 0 auto;
+  line-height: 1.75rem;
+}
+
+.LevelCard-GameplayInfo h2 {
+  margin-bottom: 0;
+}
+
+.LevelCard-GameplayInfo ol {
+  margin-top: 0.25rem;
 }
