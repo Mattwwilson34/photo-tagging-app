@@ -7,8 +7,8 @@ const TargetArea = (props) => {
     <div
       className='TargetArea'
       style={{
-        left: `${mouseX - 50}px`,
-        top: `${mouseY - 50}px`,
+        left: `${mouseX - 34}px`,
+        top: `${mouseY - 34}px`,
       }}></div>
   );
 };
