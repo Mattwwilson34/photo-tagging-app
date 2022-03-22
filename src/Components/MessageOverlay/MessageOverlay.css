@@ -1,7 +1,6 @@
 .MessageOverlay {
   position: absolute;
   display: block;
-  background-color: #4fbf26;
   padding: 1rem;
   z-index: 2;
   font-size: 2rem;
@@ -10,4 +9,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.correct {
+  background-color: #4fbf26;
+}
+
+.incorrect {
+  background-color: red;
 }
