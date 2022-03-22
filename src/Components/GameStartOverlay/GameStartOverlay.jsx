@@ -19,7 +19,6 @@ const GameStartOverlay = (props) => {
       name: 'Anonymous',
       timeStart: serverTimestamp(),
     });
-    console.log('Anonymous User + start time added w/ ID: ', userRef.id);
     setCurrentUserID(userRef.id);
   };
 
