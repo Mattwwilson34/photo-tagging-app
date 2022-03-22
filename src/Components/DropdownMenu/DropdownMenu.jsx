@@ -13,12 +13,14 @@ const DropdownMenu = (props) => {
     setCorrect,
     setClicked,
     checkIfGameOver,
+    setDropdownClicked,
   } = props;
 
   const handleClick = async (e) => {
     const { characterPercentX, characterPercentY } = await getCharacterCoords(
       e
     );
+    setDropdownClicked(true);
     const characterFound = checkIfCoordsMatch(
       characterPercentX,
       characterPercentY
