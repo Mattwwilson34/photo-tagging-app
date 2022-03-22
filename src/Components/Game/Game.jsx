@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Gamecube from '../../Images/Gamecube.jpg';
 import Click from '../Click/Click';
 import getCoords from '../../Utils/getCoords';
-import Expire from '../Expire/Expire';
 import MessageOverlay from '../MessageOverlay/MessageOverlay';
 import GameStartOverlay from '../GameStartOverlay/GameStartOverlay';
 import { setUserEndTime, setUserTimeToComplete } from '../../Utils/setUser';
@@ -56,10 +55,8 @@ const Game = () => {
         src={Gamecube}
         alt='Gamecube'
         onClick={handleImgClick}></img>
-
       {/* Check if game over */}
       {gameOver && <GameOver currentUserID={currentUserID} />}
-
       {/* If game has not started display GameStartOverlay*/}
       {!gameStarted && (
         <GameStartOverlay
@@ -67,8 +64,7 @@ const Game = () => {
           setCurrentUserID={setCurrentUserID}
         />
       )}
-
-      {/* If user guessed correctly message user */}
+      If user guessed correctly message user
       {dropdownClicked && (
         <MessageOverlay
           mouseX={mouseX}
@@ -78,7 +74,6 @@ const Game = () => {
           setCorrect={setCorrect}
         />
       )}
-
       {/* Display Dropdown/TargetArea if click = true and there are still characters to find */}
       {clicked && (
         <Click
