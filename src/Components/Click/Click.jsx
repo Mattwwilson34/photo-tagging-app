@@ -16,6 +16,7 @@ const Click = (props) => {
         setCorrect={props.setCorrect}
         setClicked={props.setClicked}
         checkIfGameOver={props.checkIfGameOver}
+        setDropdownClicked={props.setDropdownClicked}
       />
       <TargetArea mouseX={props.mouseX} mouseY={props.mouseY} />
     </div>
