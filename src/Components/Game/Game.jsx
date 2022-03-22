@@ -15,6 +15,7 @@ const Game = () => {
   const [gameOver, setGameOver] = useState(false);
   const [correct, setCorrect] = useState(false);
   const [clicked, setClicked] = useState(false);
+  const [dropdownClicked, setDropdownClicked] = useState(false);
   const [mouseX, setMouseX] = useState(null);
   const [mouseY, setMouseY] = useState(null);
   const [mousePercentX, setMousePercentX] = useState(null);
@@ -30,9 +31,6 @@ const Game = () => {
   const handleImgClick = (e) => {
     setClicked(!clicked);
     setMousePositions(e);
-    if (correct) {
-      setCorrect(false);
-    }
   };
 
   const setMousePositions = (e) => {
@@ -41,14 +39,6 @@ const Game = () => {
     setMousePercentY(percentY);
     setMouseX(e.pageX);
     setMouseY(e.pageY);
-  };
-
-  const messageUserIfCorrect = () => {
-    return (
-      <Expire delay='750'>
-        <MessageOverlay message='Correct!' mouseX={mouseX} mouseY={mouseY} />
-      </Expire>
-    );
   };
 
   const checkIfGameOver = async () => {
@@ -79,7 +69,15 @@ const Game = () => {
       )}
 
       {/* If user guessed correctly message user */}
-      {correct && messageUserIfCorrect()}
+      {dropdownClicked && (
+        <MessageOverlay
+          mouseX={mouseX}
+          mouseY={mouseY}
+          message={correct ? 'Correct' : 'Incorrect'}
+          setDropdownClicked={setDropdownClicked}
+          setCorrect={setCorrect}
+        />
+      )}
 
       {/* Display Dropdown/TargetArea if click = true and there are still characters to find */}
       {clicked && (
@@ -92,7 +90,8 @@ const Game = () => {
           mousePercentY={mousePercentY}
           characters={characters}
           setCharacters={setCharacters}
-          checkIfGameOver={checkIfGameOver}></Click>
+          checkIfGameOver={checkIfGameOver}
+          setDropdownClicked={setDropdownClicked}></Click>
       )}
     </div>
   );
