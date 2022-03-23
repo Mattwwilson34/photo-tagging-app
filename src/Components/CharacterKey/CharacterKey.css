@@ -1,0 +1,37 @@
+.CharacterKey {
+  position: fixed;
+  top: 10vh;
+  left: 1rem;
+  background-color: #010101;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.CharacterKey-ImageWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.CharacterKey img {
+  max-width: 75px;
+  align-self: center;
+  margin: 0.5rem;
+}
+
+.CharacterKey button {
+  background-color: #010101;
+  border-style: none;
+  border-radius: 5px;
+  color: white;
+  height: 100%;
+  width: 100%;
+  font-size: 1.25rem;
+  max-width: 100px;
+}
+
+.CharacterKey button:hover {
+  background-color: white;
+  color: #010101;
+  cursor: pointer;
+}
