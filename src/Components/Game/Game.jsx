@@ -7,6 +7,7 @@ import MessageOverlay from '../MessageOverlay/MessageOverlay';
 import GameStartOverlay from '../GameStartOverlay/GameStartOverlay';
 import { setUserEndTime, setUserTimeToComplete } from '../../Utils/setUser';
 import GameOver from '../GameOver/GameOver';
+import CharacterKey from '../CharacterKey/CharacterKey';
 
 const Game = () => {
   const [gameStarted, setGameStarted] = useState(false);
@@ -55,6 +56,7 @@ const Game = () => {
         src={Gamecube}
         alt='Gamecube'
         onClick={handleImgClick}></img>
+      <CharacterKey />
       {/* Check if game over */}
       {gameOver && <GameOver currentUserID={currentUserID} />}
       {/* If game has not started display GameStartOverlay*/}
@@ -64,7 +66,7 @@ const Game = () => {
           setCurrentUserID={setCurrentUserID}
         />
       )}
-      If user guessed correctly message user
+      {/* If user guessed correctly message user */}
       {dropdownClicked && (
         <MessageOverlay
           mouseX={mouseX}
